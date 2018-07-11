@@ -4,9 +4,9 @@
   include: install/2.x.yml
   when: logstash.family == '2.0'
 
-- name: Install 5.x Family
+- name: Install 5.x+ Family
   include: install/5.x.yml
-  when: logstash.family == '5.x'
+  when: logstash.family != '2.0'
 
 - name: Enable logstash service
   become: yes
